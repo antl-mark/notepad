@@ -1,5 +1,0 @@
-Deadline: 2017-08-24
-Learn the Ruby and Ruby on Rails to end summer!
-Writed: 2017.04.25, 21:43:43 
- 
-
