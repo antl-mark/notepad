@@ -2,6 +2,7 @@ require "date"
 class Task < Post
 
   def initialize
+    super
     @due_date = nil
   end
 
