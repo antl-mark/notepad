@@ -3,10 +3,10 @@ require_relative "link.rb"
 require_relative "memo.rb"
 require_relative "task.rb"
 
-puts "Hello, this is youre diary"
+puts "Hello, this is youre diary. Version 2.0 + SQLite"
 puts "What you wont to write?"
 
-choices = Post.post_types
+choices = Post.post_types.keys
 choice = -1
 until choice >= 0 && choice < choices.size
   choices.each_with_index do |type, index|
@@ -15,10 +15,10 @@ until choice >= 0 && choice < choices.size
   choice = STDIN.gets.chomp.to_i
 end
 
-entry = Post.create(choice)
+entry = Post.create(choices[choice])
 
 entry.read_from_console
 
-entry.save
+id = entry.save_to_db
 
-puts "Youre note was saved"
+puts "Youre note was saved, ID = #{id}"
