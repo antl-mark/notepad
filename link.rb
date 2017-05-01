@@ -19,7 +19,12 @@ class Link < Post
   end
 
   def to_db_hash
-    return super.merge( { :url => @url } )
+    return super.merge( { :url => @url, :text => @text } )
+  end
+
+  def load_data(data_hash)
+    super(data_hash)
+    @url = data_hash['url']
   end
 
 end
